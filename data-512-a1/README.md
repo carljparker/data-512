@@ -1,4 +1,24 @@
 
+The data used by this software was extracted using the Wikimedia
+Analytics Query Service (AQS) REST API. Specifically, the Pagecounts and
+Pageviews endpoints. These endpoints are documented at the following
+pages.
+
+**Pagecounts**
+>  <https://wikitech.wikimedia.org/wiki/Analytics/AQS/Legacy_Pagecounts>
+
+**Pageviews**
+>  <https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews>
+
+The endpoints themselves--and sandboxes to test them--are located at the
+following URLs:
+
+**Pagecounts**
+
+>  <https://wikimedia.org/api/rest_v1/#/Legacy%20data/get_metrics_legacy_pagecounts_aggregate__project___access_site___granularity___start___end_>
+
+**Pageviews**
+>  <https://wikimedia.org/api/rest_v1/#/Pageviews%20data/get_metrics_pageviews_aggregate__project___access___agent___granularity___start___end_>
 
 
 # License #
