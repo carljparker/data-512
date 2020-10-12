@@ -26,7 +26,7 @@ following URLs:
 # Notes #
 
 The pagecount (legacy) API does not provide the ability to specify the
-type of user agent that accessed the Wikipeda site. So, for example, it
+type of user agent that accessed the Wikipedia site. So, for example, it
 include traffic from web crawlers and bots. The more recent pageview API
 does provide the ability to specify the type of user agent. For these
 API calls the Jupyter notebook specifies `user`, that is, excluding
@@ -49,8 +49,8 @@ Month corresponding to the traffic data for all cells in this row.
 
 `pagecount_all_views`
 
-The total views--both desktop and mobile--collected by the pagecount
-(legacy) API for this month and year.
+The total views--both desktop site and mobile site--collected by the
+pagecount (legacy) API for this month and year.
 
 `pagecount_desktop_views`
 
@@ -59,9 +59,9 @@ month and year.
 
 `pagecount_mobile_views`
 
-Just the mobile views collected by the pagecount (legacy) API for this
-month and year. This value is the sum of views from mobile app and views
-from browsers that navigated to the mobile site.
+Just the views of the mobile site collected by the pagecount (legacy)
+API for this month and year. The presumption is that the views are from
+browsers on mobile devices.
 
 `pageview_all_views`
 
@@ -84,7 +84,7 @@ browsers that navigated to the mobile site.
 
 The data extracted via the above APIs is presumed to be used under the
 **Creative Commons Attribution-ShareAlike License** or under the, more
-permmissive, **Creative Commons CC0 License**. This presumption derives
+permissive, **Creative Commons CC0 License**. This presumption derives
 from the licensing information in the footers of the Wikipedia main page
 and the WikiData main page, which you can view at the following URLs.
 
