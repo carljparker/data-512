@@ -1,10 +1,22 @@
 
+# Project objective #
+
+This project extracts Wikipedia traffic data using two separate versions
+of the Wikipedia REST API. It processes this data and exports it as a
+CSV file: `en-wikipedia_traffic_200712-202008.csv`. The project also
+creates a plot of the data: `en_wikipedia_traffic.png`.
+
+The project objective, however, is not only to perform the above tasks,
+but to do so in a way that would be easily reproducible by others--using
+the artifacts that are contained in this repository directory.
+
+
 # Data sources #
 
 The data used by this software was extracted using the Wikimedia
 Analytics Query Service (AQS) REST API. Specifically, the **Pagecounts**
-and **Pageviews** endpoints. These endpoints are documented at the
-following pages.
+(legacy) and **Pageviews** endpoints. These endpoints are documented at
+the following pages.
 
 **Pagecounts**
 >  <https://wikitech.wikimedia.org/wiki/Analytics/AQS/Legacy_Pagecounts>
