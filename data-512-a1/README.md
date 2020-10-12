@@ -22,6 +22,66 @@ following URLs:
 **Pageviews**
 >  <https://wikimedia.org/api/rest_v1/#/Pageviews%20data/get_metrics_pageviews_aggregate__project___access___agent___granularity___start___end_>
 
+
+# Notes #
+
+The pagecount (legacy) API does not provide the ability to specify the
+type of user agent that accessed the Wikipeda site. So, for example, it
+include traffic from web crawlers and bots. The more recent pageview API
+does provide the ability to specify the type of user agent. For these
+API calls the Jupyter notebook specifies `user`, that is, excluding
+traffic from web crawlers and bots.
+
+
+# Data file columns #
+
+The CSV file, `en-wikipedia_traffic_200712-202008.csv` has the following
+columns. Not the resolution--or _granularity_--of the data collected is
+_monthly_.
+
+`year`
+
+Year corresponding to the traffic data for all cells in this row.
+
+`month`
+
+Month corresponding to the traffic data for all cells in this row.
+
+`pagecount_all_views`
+
+The total views--both desktop and mobile--collected by the pagecount
+(legacy) API for this month and year.
+
+`pagecount_desktop_views`
+
+Just the desktop views collected by the pagecount (legacy) API for this
+month and year.
+
+`pagecount_mobile_views`
+
+Just the mobile views collected by the pagecount (legacy) API for this
+month and year. This value is the sum of views from mobile app and views
+from browsers that navigated to the mobile site.
+
+`pageview_all_views`
+
+The total views--both desktop and mobile--collected by the pageview API
+for this month and year.
+
+`pageview_desktop_views`
+
+Just the desktop views collected by the pageview API for this month and
+year.
+
+`pageview_mobile_views`
+
+Just the mobile views collected by the pageview API for this month and
+year. This value is the sum of views from mobile app and views from
+browsers that navigated to the mobile site.
+
+
+# Licensing for data used #
+
 The data extracted via the above APIs is presumed to be used under the
 **Creative Commons Attribution-ShareAlike License** or under the, more
 permmissive, **Creative Commons CC0 License**. This presumption derives
@@ -31,6 +91,10 @@ and the WikiData main page, which you can view at the following URLs.
 >  <https://www.wikipedia.org/>
 
 >  <https://www.wikidata.org/>
+
+See also the Wikimedia terms of use (TOU):
+
+>  <https://www.mediawiki.org/wiki/REST_API#Terms_and_conditions>
 
 
 # License #
