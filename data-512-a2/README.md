@@ -4,22 +4,14 @@
 
 # Data sources #
 
-The data used in this project was obtained from 
-[Wikipedia Talk project](https://figshare.com/projects/Wikipedia_Talk/16731).
+The data used in this project was obtained from the
+[Wikipedia Talk project](https://figshare.com/projects/Wikipedia_Talk/16731)
 on **Figshare**. 
 
 This project uses the following datasets specifically:
 
 - [Wikipedia Talk Labels: Personal Attacks](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Personal_Attacks/4054689)
 - [Wikipedia Talk Labels: Aggression](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Aggression/4267550)
-
-Each of these datasets comprises three files:
-
-- Comments that were annotated by workers. This file has a basename suffix of `_annotated_comments`.
-- Annotations specified by the workers. This file has a basename suffix of `_annotations`.
-- Demographic information on the workers. This file has a basename suffix of `_worker_demographics`.
-
-All these files have an _extension_ of `.tsv`.
 
 
 ## Notes ##
@@ -30,51 +22,80 @@ size of the datasets, the notebook does not access them directly from
 their location on **Figshare**.
 
 
-# Data file columns #
+# Data file format #
 
-The CSV file, `en-wikipedia_traffic_200712-202008.csv` has the following
-columns. Not the resolution--or _granularity_--of the data collected is
-_monthly_.
+Each of these datasets comprises three files:
+
+- Comments that were extracted from Wikipedia Talk pages. This file has a basename suffix of `_annotated_comments`.
+- Annotations for these comments specified by workers. This file has a basename suffix of `_annotations`.
+- Demographic information for the workers. This file has a basename suffix of `_worker_demographics`.
+
+All these files have an _extension_ of `.tsv`, which indicates that they
+are formatted as tab-separated values.
+
+The columns for the `_annotated_comments` and `_worker_demographics`
+files are the same across both the Aggression and Personal Attacks
+datasets. However, the columns for the `_annotations` file differ
+between these datasets. The following section provides more detail.
+
+
+## Annotated comments columns ##
+
+`rev_id`
+
+`comment`
 
 `year`
 
-Year corresponding to the traffic data for all cells in this row.
+`logged_in`
 
-`month`
+`ns`
 
-Month corresponding to the traffic data for all cells in this row.
+`sample`
 
-`pagecount_all_views`
+`split`
 
-The total views--both desktop site and mobile site--collected by the
-pagecount (legacy) API for this month and year.
 
-`pagecount_desktop_views`
+## Demographic information columns ##
 
-Just the desktop views collected by the pagecount (legacy) API for this
-month and year.
+`worker_id`
 
-`pagecount_mobile_views`
+`gender`
 
-Just the views of the mobile site collected by the pagecount (legacy)
-API for this month and year. The presumption is that the views are from
-browsers on mobile devices.
+`english_first_language`
 
-`pageview_all_views`
+`age_group`
 
-The total views--both desktop and mobile--collected by the pageview API
-for this month and year.
+`education`
 
-`pageview_desktop_views`
 
-Just the desktop views collected by the pageview API for this month and
-year.
+## Annotations columns for aggression ##
 
-`pageview_mobile_views`
 
-Just the mobile views collected by the pageview API for this month and
-year. This value is the sum of views from mobile app and views from
-browsers that navigated to the mobile site.
+## Annotations columns for personal attacks ##
+
+`rev_id`
+
+`worker_id`
+
+`recipient` attack
+
+`third_party_attack`
+
+`other_attack`
+
+`attack`
+
+
+## Annotations columns for personal attacks ##
+
+`rev_id`
+
+`worker_id`
+
+`aggression`
+
+`aggression_score`
 
 
 # Licensing for data used #
