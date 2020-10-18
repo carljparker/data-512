@@ -13,6 +13,11 @@ This project uses the following datasets specifically:
 - [Wikipedia Talk Labels: Personal Attacks](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Personal_Attacks/4054689)
 - [Wikipedia Talk Labels: Aggression](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Aggression/4267550)
 
+## Citation for data ##
+
+Wulczyn, Ellery; Thain, Nithum; Dixon, Lucas (2016): Wikipedia Detox. figshare. 
+[doi.org/10.6084/m9.figshare.4054689](doi.org/10.6084/m9.figshare.4054689)
+
 
 ## Notes ##
 
@@ -23,6 +28,11 @@ their location on **Figshare**.
 
 
 # Data file format #
+
+[Complete information about the format of the data files is available on
+the 
+[Research:Detox/Data Release](https://meta.wikimedia.org/wiki/Research:Detox/Data_Release)
+page at Wikimedia.]
 
 Each of these datasets comprises three files:
 
@@ -39,7 +49,16 @@ datasets. However, the columns for the `_annotations` file differ
 between these datasets. The following section provides more detail.
 
 
-## Annotated comments columns ##
+## `annotated_comments` columns ##
+
+rev_id: MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
+comment: Comment text. Consists of the concatenation of content added during a revision/edit of a talk page. MediaWiki markup and HTML have been stripped out. To simplify tsv parsing, \n has been mapped to NEWLINE_TOKEN, \t has been mapped to TAB_TOKEN and " has been mapped to `.
+year: The year the comment was posted in.
+logged_in: Indicator for whether the user who made the comment was logged in. Takes on values in {0, 1}.
+ns: Namespace of the discussion page the comment was made in. Takes on values in {user, article}.
+sample: Indicates whether the comment came via random sampling of all comments, or whether it came from random sampling of the 5 comments around a block event for violating WP:npa or WP:HA. Takes on values in {random, blocked}.
+split: For model building in our paper we split comments into train, dev and test sets. Takes on values in {train, dev, test}.
+
 
 `rev_id`
 
@@ -56,8 +75,13 @@ between these datasets. The following section provides more detail.
 `split`
 
 
-## Demographic information columns ##
+## `demographic_information` columns ##
 
+worker_id: Anonymized crowd-worker id.
+gender: The gender of the crowd-worker. Takes a value in {'male', 'female', and 'other'}.
+english_first_language: Does the crowd-worker describe English as their first language. Takes a value in {0, 1}.
+age_group: The age group of the crowd-worker. Takes on values in {'Under 18', '18-30', '30-45', '45-60', 'Over 60'}.
+education: The highest education level obtained by the crowd-worker. Takes on values in {'none', 'some', 'hs', 'bachelors', 'masters', 'doctorate', 'professional'}. Here 'none' means no schooling, some means 'some schooling', 'hs' means high school completion, and the remaining terms indicate completion of the corresponding degree type.
 `worker_id`
 
 `gender`
@@ -69,16 +93,21 @@ between these datasets. The following section provides more detail.
 `education`
 
 
-## Annotations columns for aggression ##
+## `annotations` columns for personal attacks ##
 
-
-## Annotations columns for personal attacks ##
+rev_id: MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
+worker_id: Anonymized crowd-worker id.
+quoting_attack: Indicator for whether the worker thought the comment is quoting or reporting a personal attack that originated in a different comment..
+recipient_attack: Indicator for whether the worker thought the comment contains a personal attack directed at the recipient of the comment.
+third_party_attack: Indicator for whether the worker thought the comment contains a personal attack directed at a third party.
+other_attack: Indicator for whether the worker thought the comment contains a personal attack but is not quoting attack, a recipient attack or third party attack.
+attack: Indicator for whether the worker thought the comment contains any form of personal attack. The exact question we posed can be found . The annotation takes on value 0 if the worker selected the option "This is not an attack or harassment" and value 1 otherwise.
 
 `rev_id`
 
 `worker_id`
 
-`recipient` attack
+`recipient_attack`
 
 `third_party_attack`
 
@@ -87,7 +116,12 @@ between these datasets. The following section provides more detail.
 `attack`
 
 
-## Annotations columns for personal attacks ##
+## `annotations` columns for aggression ##
+
+rev_id: MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
+worker_id: Anonymized crowd-worker id.
+aggression_score: Categorical variable ranging from very aggressive (-2), to neutral (0), to very friendly (2).
+aggression: Indicator variable for whether the worker thought the comment has an aggressive tone . The annotation takes on the value 1 if the worker considered the comment aggressive (i.e worker gave an aggression_score less than 0) and value 0 if the worker considered the comment neutral or friendly (i.e worker gave an aggression_score greater or equal to 0). Takes on values in {0, 1}.
 
 `rev_id`
 
