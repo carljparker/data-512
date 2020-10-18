@@ -1,48 +1,33 @@
 
 # Project objective #
 
-This project extracts Wikipedia traffic data using two separate versions
-of the Wikipedia REST API. It processes this data and exports it as a
-CSV file: `en-wikipedia_traffic_200712-202008.csv`. The project also
-creates a plot of the data: `en_wikipedia_traffic.png`.
-
-The project objective, however, is not only to perform the above tasks,
-but to do so in a way that would be easily reproducible by others--using
-the artifacts that are contained in this repository directory.
-
 
 # Data sources #
 
-The data used by this software was extracted using the Wikimedia
-Analytics Query Service (AQS) REST API. Specifically, the **Pagecounts**
-(legacy) and **Pageviews** endpoints. These endpoints are documented at
-the following pages.
+The data used in this project was obtained from 
+[Wikipedia Talk project](https://figshare.com/projects/Wikipedia_Talk/16731).
+on **Figshare**. 
 
-**Pagecounts**
->  <https://wikitech.wikimedia.org/wiki/Analytics/AQS/Legacy_Pagecounts>
+This project uses the following datasets specifically:
 
-**Pageviews**
->  <https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews>
+- [Wikipedia Talk Labels: Personal Attacks](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Personal_Attacks/4054689)
+- [Wikipedia Talk Labels: Aggression](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Aggression/4267550)
 
-The endpoints themselves--and sandboxes to test them--are located at the
-following URLs:
+Each of these datasets comprises three files:
 
-**Pagecounts**
+- Comments that were annotated by workers. This file has a basename suffix of `_annotated_comments`.
+- Annotations specified by the workers. This file has a basename suffix of `_annotations`.
+- Demographic information on the workers. This file has a basename suffix of `_worker_demographics`.
 
->  <https://wikimedia.org/api/rest_v1/#/Legacy%20data/get_metrics_legacy_pagecounts_aggregate__project___access_site___granularity___start___end_>
-
-**Pageviews**
->  <https://wikimedia.org/api/rest_v1/#/Pageviews%20data/get_metrics_pageviews_aggregate__project___access___agent___granularity___start___end_>
+All these files have an _extension_ of `.tsv`.
 
 
-# Notes #
+## Notes ##
 
-The pagecount (legacy) API does not provide the ability to specify the
-type of user agent that accessed the Wikipedia site. So, for example, it
-include traffic from web crawlers and bots. The more recent pageview API
-does provide the ability to specify the type of user agent. For these
-API calls the Jupyter notebook specifies `user`, that is, excluding
-traffic from web crawlers and bots.
+The datasets used in this project were downloaded to local storage and
+accessed from there by the project's Jupypter notebook. Because of the
+size of the datasets, the notebook does not access them directly from
+their location on **Figshare**.
 
 
 # Data file columns #
@@ -94,19 +79,18 @@ browsers that navigated to the mobile site.
 
 # Licensing for data used #
 
-The data extracted via the above APIs is presumed to be used under the
-**Creative Commons Attribution-ShareAlike License** or under the, more
-permissive, **Creative Commons CC0 License**. This presumption derives
-from the licensing information in the footers of the Wikipedia main page
-and the WikiData main page, which you can view at the following URLs.
+The data for this project is used under the 
+**Creative Commons CC0 1.0 Universal (CC0 1.0) Public Domain Dedication**
+as indicated on the web page for each of the datasets on **Figshare**.
 
->  <https://www.wikipedia.org/>
+For more information about this version of the Creative Commons CC0
+license, see the [web page](https://creativecommons.org/publicdomain/zero/1.0/)
+for that license at the Creative Commons web site.  
 
->  <https://www.wikidata.org/>
-
-See also the Wikimedia terms of use (TOU):
-
->  <https://www.mediawiki.org/wiki/REST_API#Terms_and_conditions>
+See also the **Figshare** 
+[terms of use (TOU)](https://figshare.com/terms)
+and 
+[privacy policy](https://figshare.com/privacy).
 
 
 # License #
