@@ -51,85 +51,107 @@ between these datasets. The following section provides more detail.
 
 ## `annotated_comments` columns ##
 
-rev_id: MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
-comment: Comment text. Consists of the concatenation of content added during a revision/edit of a talk page. MediaWiki markup and HTML have been stripped out. To simplify tsv parsing, \n has been mapped to NEWLINE_TOKEN, \t has been mapped to TAB_TOKEN and " has been mapped to `.
-year: The year the comment was posted in.
-logged_in: Indicator for whether the user who made the comment was logged in. Takes on values in {0, 1}.
-ns: Namespace of the discussion page the comment was made in. Takes on values in {user, article}.
-sample: Indicates whether the comment came via random sampling of all comments, or whether it came from random sampling of the 5 comments around a block event for violating WP:npa or WP:HA. Takes on values in {random, blocked}.
-split: For model building in our paper we split comments into train, dev and test sets. Takes on values in {train, dev, test}.
+`rev_id` 
 
+MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
 
-`rev_id`
+`comment` 
 
-`comment`
+Comment text. Consists of the concatenation of content added during a revision/edit of a talk page. MediaWiki markup and HTML have been stripped out. To simplify tsv parsing, \n has been mapped to NEWLINE_TOKEN, \t has been mapped to TAB_TOKEN and " has been mapped to `.
 
-`year`
+`year` 
 
-`logged_in`
+The year the comment was posted in.
 
-`ns`
+`logged_in` 
 
-`sample`
+Indicator for whether the user who made the comment was logged in. Takes on values in {0, 1}.
 
-`split`
+`ns` 
+
+Namespace of the discussion page the comment was made in. Takes on values in {user, article}.
+
+`sample` 
+
+Indicates whether the comment came via random sampling of all comments, or whether it came from random sampling of the 5 comments around a block event for violating WP:npa or WP:HA. Takes on values in {random, blocked}.
+
+`split` 
+
+For model building in our paper we split comments into train, dev and test sets. Takes on values in {train, dev, test}.
+
 
 
 ## `demographic_information` columns ##
 
-worker_id: Anonymized crowd-worker id.
-gender: The gender of the crowd-worker. Takes a value in {'male', 'female', and 'other'}.
-english_first_language: Does the crowd-worker describe English as their first language. Takes a value in {0, 1}.
-age_group: The age group of the crowd-worker. Takes on values in {'Under 18', '18-30', '30-45', '45-60', 'Over 60'}.
-education: The highest education level obtained by the crowd-worker. Takes on values in {'none', 'some', 'hs', 'bachelors', 'masters', 'doctorate', 'professional'}. Here 'none' means no schooling, some means 'some schooling', 'hs' means high school completion, and the remaining terms indicate completion of the corresponding degree type.
-`worker_id`
+`worker_id` 
 
-`gender`
+Anonymized crowd-worker id.
 
-`english_first_language`
+`gender` 
 
-`age_group`
+The gender of the crowd-worker. Takes a value in {'male', 'female', and 'other'}.
 
-`education`
+`english_first_language` 
+
+Does the crowd-worker describe English as their first language. Takes a value in {0, 1}.
+
+`age_group` 
+
+The age group of the crowd-worker. Takes on values in {'Under 18', '18-30', '30-45', '45-60', 'Over 60'}.
+
+`education` 
+
+The highest education level obtained by the crowd-worker. Takes on values in {'none', 'some', 'hs', 'bachelors', 'masters', 'doctorate', 'professional'}. Here 'none' means no schooling, some means 'some schooling', 'hs' means high school completion, and the remaining terms indicate completion of the corresponding degree type.
 
 
 ## `annotations` columns for personal attacks ##
 
-rev_id: MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
-worker_id: Anonymized crowd-worker id.
-quoting_attack: Indicator for whether the worker thought the comment is quoting or reporting a personal attack that originated in a different comment..
-recipient_attack: Indicator for whether the worker thought the comment contains a personal attack directed at the recipient of the comment.
-third_party_attack: Indicator for whether the worker thought the comment contains a personal attack directed at a third party.
-other_attack: Indicator for whether the worker thought the comment contains a personal attack but is not quoting attack, a recipient attack or third party attack.
-attack: Indicator for whether the worker thought the comment contains any form of personal attack. The exact question we posed can be found . The annotation takes on value 0 if the worker selected the option "This is not an attack or harassment" and value 1 otherwise.
+`rev_id` 
 
-`rev_id`
+MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
 
-`worker_id`
+`worker_id` 
 
-`recipient_attack`
+Anonymized crowd-worker id.
 
-`third_party_attack`
+`quoting_attack` 
 
-`other_attack`
+Indicator for whether the worker thought the comment is quoting or reporting a personal attack that originated in a different comment..
 
-`attack`
+`recipient_attack` 
+
+Indicator for whether the worker thought the comment contains a personal attack directed at the recipient of the comment.
+
+`third_party_attack` 
+
+Indicator for whether the worker thought the comment contains a personal attack directed at a third party.
+
+`other_attack` 
+
+Indicator for whether the worker thought the comment contains a personal attack but is not quoting attack, a recipient attack or third party attack.
+
+`attack` 
+
+Indicator for whether the worker thought the comment contains any form of personal attack. The exact question we posed can be found . The annotation takes on value 0 if the worker selected the option "This is not an attack or harassment" and value 1 otherwise.
 
 
 ## `annotations` columns for aggression ##
 
-rev_id: MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
-worker_id: Anonymized crowd-worker id.
-aggression_score: Categorical variable ranging from very aggressive (-2), to neutral (0), to very friendly (2).
-aggression: Indicator variable for whether the worker thought the comment has an aggressive tone . The annotation takes on the value 1 if the worker considered the comment aggressive (i.e worker gave an aggression_score less than 0) and value 0 if the worker considered the comment neutral or friendly (i.e worker gave an aggression_score greater or equal to 0). Takes on values in {0, 1}.
+`rev_id` 
 
-`rev_id`
+MediaWiki revision id of the edit that added the comment to a talk page (i.e. discussion).
 
-`worker_id`
+`worker_id` 
 
-`aggression`
+Anonymized crowd-worker id.
 
-`aggression_score`
+`aggression_score` 
+
+Categorical variable ranging from very aggressive (-2), to neutral (0), to very friendly (2).
+
+`aggression` 
+
+Indicator variable for whether the worker thought the comment has an aggressive tone . The annotation takes on the value 1 if the worker considered the comment aggressive (i.e worker gave an aggression_score less than 0) and value 0 if the worker considered the comment neutral or friendly (i.e worker gave an aggression_score greater or equal to 0). Takes on values in {0, 1}.
 
 
 # Licensing for data used #
