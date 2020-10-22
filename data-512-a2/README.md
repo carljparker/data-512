@@ -1,6 +1,17 @@
 
 # Project objective #
 
+I want to explore two questions using the data in these datasets. Both questions consider possible gender differences in the way the crowdworkers interpreted the Talk Page comments. One of the alleged differences between men and women is that woman report higher Agreeableness scores in measures of the Big Five personality traits. Another is that women have greater empathy than men. (See references below.)
+
+The difference in Agreeableness suggests the possibility that women might have--in some sense--greater reactivity to aggression than men and therefore might be more likely to flag it in the Talk Page comments. Similarly, for toxicity. Here we are operating on the assumption that Agreeableness, as a personality trait, is at odds with both aggression and toxicity.
+
+Empathy is associated with understanding the mental or emotional state of another person. If women in general have higher empathy than men, then this could manifest in multiple ways. Women might tend to assess aggression or toxicity in the Wikipedia talk comments with greater _precision_ than men. Or women might simply tend to assess higher level of aggression and toxicity than men.
+
+Note that detecting aggression/toxicity and assessing its level are somewhat distinct. For example, men and women could agree on which comments are toxic, but in general, disagree about the level of toxicity. There is also the scenario where men and women seem to disagree on which comments are toxic, but when they do agree, they rate the toxicity level similarly; admittedly, this second scenario seems less likely.
+
+-  Question 1: Do women have greater sensitivity than men _in detecting_ instances of a) aggression or b) toxicity in the Talk Page comments--related to differences in Agreeableness.
+-  Question 2: Do women have greater sensitivity than men _to the level_ of a) aggression or b) toxicity in the Talk Page comments--related to differences in empathy?
+
 
 # Data sources #
 
@@ -10,7 +21,6 @@ on **Figshare**.
 
 This project uses the following datasets specifically:
 
-- [Wikipedia Talk Labels: Personal Attacks](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Personal_Attacks/4054689)
 - [Wikipedia Talk Labels: Aggression](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Aggression/4267550)
 - [Wikipedia Talk Labels: Toxicity](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Toxicity/4563973)
 
