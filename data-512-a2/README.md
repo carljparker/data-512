@@ -12,6 +12,8 @@ This project uses the following datasets specifically:
 
 - [Wikipedia Talk Labels: Personal Attacks](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Personal_Attacks/4054689)
 - [Wikipedia Talk Labels: Aggression](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Aggression/4267550)
+- [Wikipedia Talk Labels: Toxicity](https://figshare.com/articles/dataset/Wikipedia_Talk_Labels_Toxicity/4563973)
+
 
 ## Citation for data ##
 
@@ -25,6 +27,9 @@ The datasets used in this project were downloaded to local storage and
 accessed from there by the project's Jupypter notebook. Because of the
 size of the datasets, the notebook does not access them directly from
 their location on **Figshare**.
+
+To reproduce the analysis in this directory, you will need to download
+the datasets.
 
 
 # Data file format #
