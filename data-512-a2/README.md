@@ -121,6 +121,31 @@ schooling', 'hs' means high school completion, and the remaining terms
 indicate completion of the corresponding degree type.
 
 
+## `annotations` columns for toxicity ##
+
+`rev_id` 
+
+MediaWiki revision id of the edit that added the comment to a talk page
+(i.e. discussion).  
+
+`worker_id` 
+
+Anonymized crowd-worker id.
+
+`toxicity_score` 
+
+Categorical variable ranging from very toxic (-2), to neutral (0), to
+very healthy (2).
+
+`toxicity` 
+
+Indicator variable for whether the worker thought the comment is toxic.
+The annotation takes on the value 1 if the worker considered the comment
+toxic (i.e worker gave a `toxicity_score` less than 0) and value 0 if the
+worker considered the comment neutral or healthy (i.e worker gave a
+`toxicity_score` greater or equal to 0). Takes on values in {0, 1}.
+
+
 ## `annotations` columns for personal attacks ##
 
 `rev_id` 
@@ -135,7 +160,7 @@ Anonymized crowd-worker id.
 `quoting_attack` 
 
 Indicator for whether the worker thought the comment is quoting or
-reporting a personal attack that originated in a different comment..
+reporting a personal attack that originated in a different comment.
 
 `recipient_attack` 
 
